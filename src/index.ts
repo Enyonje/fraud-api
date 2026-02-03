@@ -18,9 +18,9 @@ app.post("/risk-score", (req: Request, res: Response) => {
   // Dummy scoring logic for now
   let score = 0;
 
-  if (amount > 1000) score += 30;        // Large transaction
+  if (amount > 1000) score += 30; // Large transaction
   if (location !== "Nairobi") score += 20; // Unusual location
-  if (!userId) score += 50;              // Missing user ID
+  if (!userId) score += 50; // Missing user ID
 
   // Normalize score between 0–100
   if (score > 100) score = 100;
@@ -28,7 +28,7 @@ app.post("/risk-score", (req: Request, res: Response) => {
   res.json({
     transactionId,
     riskScore: score,
-    status: score > 70 ? "high-risk" : "low-risk"
+    status: score > 70 ? "high-risk" : "low-risk",
   });
 });
 

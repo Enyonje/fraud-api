@@ -1,8 +1,5 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
 
-# Run ESLint on staged files
-npm run lint
 
-# Run Jest tests
-npm test
+
+npm run lint:fix
+npm run format

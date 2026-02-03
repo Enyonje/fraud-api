@@ -6,5 +6,5 @@ export const env = {
   NODE_ENV: process.env.NODE_ENV || "development",
   // Add blockchain API keys as needed
   ETH_RPC_URL: process.env.ETH_RPC_URL || "",
-  RISK_POLICY_VERSION: process.env.RISK_POLICY_VERSION || "v1"
+  RISK_POLICY_VERSION: process.env.RISK_POLICY_VERSION || "v1",
 };

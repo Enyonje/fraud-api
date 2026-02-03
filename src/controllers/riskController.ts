@@ -7,7 +7,7 @@ export async function calculateRiskScoreHandler(req: Request, res: Response) {
   if (!parse.success) {
     return res.status(400).json({
       error: "Invalid request",
-      details: parse.error.format()
+      details: parse.error.format(),
     });
   }
 
@@ -26,6 +26,6 @@ export async function calculateRiskScoreHandler(req: Request, res: Response) {
   return res.json({
     transactionId: parse.data.transactionId,
     riskScore: score,
-    status
+    status,
   });
 }

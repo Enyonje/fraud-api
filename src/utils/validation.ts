@@ -8,7 +8,7 @@ export const riskRequestSchema = z.object({
   address: z.string().min(10).optional(),
   chainId: z.number().int().optional(),
   location: z.string().optional(),
-  timestamp: z.number().int().optional()
+  timestamp: z.number().int().optional(),
 });
 
 export type RiskRequest = z.infer<typeof riskRequestSchema>;

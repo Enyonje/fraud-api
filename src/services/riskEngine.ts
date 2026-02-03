@@ -10,8 +10,16 @@ export async function calculateRiskScore(input: RiskRequest): Promise<number> {
   if (input.address) {
     const onchainSignal = await getAddressRiskSignal(input.address);
     const sanctionsSignal = await getSanctionsSignal(input.address);
-    baseFactors.push({ label: "onchainActivity", weight: 0.15, value: onchainSignal });
-    baseFactors.push({ label: "sanctionsExposure", weight: 0.15, value: sanctionsSignal });
+    baseFactors.push({
+      label: "onchainActivity",
+      weight: 0.15,
+      value: onchainSignal,
+    });
+    baseFactors.push({
+      label: "sanctionsExposure",
+      weight: 0.15,
+      value: sanctionsSignal,
+    });
   }
 
   return weightedScore(baseFactors);
