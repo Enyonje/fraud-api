@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  fraud-api:
+    build: .
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+      LOG_LEVEL: info
+      ETH_RPC_URL: ${ETH_RPC_URL}
+    ports:
+      - "3000:3000"
